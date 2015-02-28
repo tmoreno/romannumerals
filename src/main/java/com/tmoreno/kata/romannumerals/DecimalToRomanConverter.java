@@ -3,18 +3,28 @@ package com.tmoreno.kata.romannumerals;
 public class DecimalToRomanConverter {
 
 	public String convert(int decimal) {
+		if (decimal >= 10) {
+			if (decimal == 10) {
+				return "X";
+			} else {
+				return "XI";
+			}
+		} else {
+			return convertUnits(decimal);
+		}
+	}
+
+	private String convertUnits(int number) {
 		String result = "";
 
-		if (decimal < 4) {
-			result += addI(decimal);
-		} else if (decimal == 4) {
+		if (number < 4) {
+			result += addI(number);
+		} else if (number == 4) {
 			result += "IV";
-		} else if (decimal == 9) {
+		} else if (number == 9) {
 			result += "IX";
-		} else if (decimal == 10) {
-			result = "X";
 		} else {
-			result += "V" + addI(decimal % 5);
+			result += "V" + addI(number % 5);
 		}
 
 		return result;
