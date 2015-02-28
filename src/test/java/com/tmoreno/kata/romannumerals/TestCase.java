@@ -210,4 +210,10 @@ public class TestCase {
 		String result = converter.convert(59);
 		Assert.assertEquals("LIX", result);
 	}
+
+	@Test
+	public void given60getLX() {
+		String result = converter.convert(60);
+		Assert.assertEquals("LX", result);
+	}
 }
