@@ -4,7 +4,8 @@ public class DecimalToRomanConverter {
 
 	public String convert(int decimal) {
 		if (decimal >= 10) {
-			return addX(decimal / 10) + convertUnits(decimal % 10);
+			return addLetterNTimes("X", decimal / 10)
+					+ convertUnits(decimal % 10);
 		} else {
 			return convertUnits(decimal);
 		}
@@ -14,33 +15,23 @@ public class DecimalToRomanConverter {
 		String result = "";
 
 		if (number < 4) {
-			result += addI(number);
+			result += addLetterNTimes("I", number);
 		} else if (number == 4) {
 			result += "IV";
 		} else if (number == 9) {
 			result += "IX";
 		} else {
-			result += "V" + addI(number % 5);
+			result += "V" + addLetterNTimes("I", number % 5);
 		}
 
 		return result;
 	}
 
-	private String addI(int numbresOfI) {
+	private String addLetterNTimes(String letter, int numbresOftimes) {
 		String result = "";
 
-		for (int i = 0; i < numbresOfI; i++) {
-			result += "I";
-		}
-
-		return result;
-	}
-
-	private String addX(int numbresOfX) {
-		String result = "";
-
-		for (int i = 0; i < numbresOfX; i++) {
-			result += "X";
+		for (int i = 0; i < numbresOftimes; i++) {
+			result += letter;
 		}
 
 		return result;
