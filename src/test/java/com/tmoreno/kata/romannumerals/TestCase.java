@@ -114,4 +114,10 @@ public class TestCase {
 		String result = converter.convert(19);
 		Assert.assertEquals("XIX", result);
 	}
+
+	@Test
+	public void given20getXX() {
+		String result = converter.convert(20);
+		Assert.assertEquals("XX", result);
+	}
 }
