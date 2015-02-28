@@ -11,4 +11,11 @@ public class TestCase {
         String result = converter.convert(1);
         Assert.assertEquals("I", result);
     }
+
+    @Test
+    public void given2getII() {
+        DecimalToRomanConverter converter = new DecimalToRomanConverter();
+        String result = converter.convert(2);
+        Assert.assertEquals("II", result);
+    }
 }
