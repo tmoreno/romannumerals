@@ -6,17 +6,21 @@ public class DecimalToRomanConverter {
 		String result = "";
 
 		if (decimal < 4) {
-			for (int i = 0; i < decimal; i++) {
-				result += "I";
-			}
+			result += addI(decimal);
 		} else if (decimal == 4) {
 			result += "IV";
 		} else {
-			result += "V";
+			result += "V" + addI(decimal % 5);
+		}
 
-			for (int i = 5; i < decimal; i++) {
-				result += "I";
-			}
+		return result;
+	}
+
+	private String addI(int numbresOfI) {
+		String result = "";
+
+		for (int i = 0; i < numbresOfI; i++) {
+			result += "I";
 		}
 
 		return result;
