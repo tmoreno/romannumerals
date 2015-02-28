@@ -174,4 +174,16 @@ public class TestCase {
 		String result = converter.convert(41);
 		Assert.assertEquals("XLI", result);
 	}
+
+	@Test
+	public void given41getXLIV() {
+		String result = converter.convert(44);
+		Assert.assertEquals("XLIV", result);
+	}
+
+	@Test
+	public void given49getXLIX() {
+		String result = converter.convert(49);
+		Assert.assertEquals("XLIX", result);
+	}
 }
