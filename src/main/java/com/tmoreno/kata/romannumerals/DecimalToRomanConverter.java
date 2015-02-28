@@ -4,7 +4,7 @@ public class DecimalToRomanConverter {
 
 	public String convert(int decimal) {
 		if (decimal <= 9) {
-			return convertUnits(decimal);
+			return convertUnits(decimal % 10);
 		} else if (decimal >= 10 && decimal < 40) {
 			return addLetterNTimes("X", decimal / 10)
 					+ convertUnits(decimal % 10);
