@@ -4,11 +4,7 @@ public class DecimalToRomanConverter {
 
 	public String convert(int decimal) {
 		if (decimal >= 10) {
-			if (decimal == 10) {
-				return "X";
-			} else {
-				return "XI";
-			}
+			return "X" + addI(decimal % 10);
 		} else {
 			return convertUnits(decimal);
 		}
