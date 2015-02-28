@@ -36,4 +36,10 @@ public class TestCase {
         String result = converter.convert(4);
         Assert.assertEquals("IV", result);
     }
+    
+    @Test
+    public void given5getV() {
+        String result = converter.convert(5);
+        Assert.assertEquals("V", result);
+    }
 }
