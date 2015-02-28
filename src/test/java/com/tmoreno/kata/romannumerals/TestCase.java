@@ -92,8 +92,8 @@ public class TestCase {
 	}
 
 	@Test
-	public void given14getIVX() {
+	public void given14getXIV() {
 		String result = converter.convert(14);
-		Assert.assertEquals("IVX", result);
+		Assert.assertEquals("XIV", result);
 	}
 }
