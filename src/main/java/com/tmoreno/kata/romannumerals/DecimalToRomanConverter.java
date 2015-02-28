@@ -6,8 +6,11 @@ public class DecimalToRomanConverter {
         if (i == 1) {
             return "I";
         }
-        else {
+        else if (i == 2) {
             return "II";
+        }
+        else {
+            return "III";
         }
     }
 }
