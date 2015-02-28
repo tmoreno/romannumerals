@@ -156,4 +156,10 @@ public class TestCase {
 		String result = converter.convert(34);
 		Assert.assertEquals("XXXIV", result);
 	}
+
+	@Test
+	public void given39getXXXIX() {
+		String result = converter.convert(39);
+		Assert.assertEquals("XXXIX", result);
+	}
 }
