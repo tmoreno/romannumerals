@@ -48,4 +48,16 @@ public class TestCase {
 		String result = converter.convert(6);
 		Assert.assertEquals("VI", result);
 	}
+
+	@Test
+	public void given7getVII() {
+		String result = converter.convert(7);
+		Assert.assertEquals("VII", result);
+	}
+
+	@Test
+	public void given8getVIII() {
+		String result = converter.convert(8);
+		Assert.assertEquals("VIII", result);
+	}
 }
