@@ -120,4 +120,40 @@ public class TestCase {
 		String result = converter.convert(20);
 		Assert.assertEquals("XX", result);
 	}
+
+	@Test
+	public void given21getXXI() {
+		String result = converter.convert(21);
+		Assert.assertEquals("XXI", result);
+	}
+
+	@Test
+	public void given24getXXI() {
+		String result = converter.convert(24);
+		Assert.assertEquals("XXIV", result);
+	}
+
+	@Test
+	public void given26getXXI() {
+		String result = converter.convert(26);
+		Assert.assertEquals("XXVI", result);
+	}
+
+	@Test
+	public void given29getXXIX() {
+		String result = converter.convert(29);
+		Assert.assertEquals("XXIX", result);
+	}
+
+	@Test
+	public void given30getXXX() {
+		String result = converter.convert(30);
+		Assert.assertEquals("XXX", result);
+	}
+
+	@Test
+	public void given34getXXX() {
+		String result = converter.convert(34);
+		Assert.assertEquals("XXXIV", result);
+	}
 }
