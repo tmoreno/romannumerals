@@ -11,6 +11,8 @@ public class DecimalToRomanConverter {
 			result += "IV";
 		} else if (decimal == 9) {
 			result += "IX";
+		} else if (decimal == 10) {
+			result = "X";
 		} else {
 			result += "V" + addI(decimal % 5);
 		}
