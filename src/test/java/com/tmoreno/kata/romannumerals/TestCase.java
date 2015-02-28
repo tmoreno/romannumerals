@@ -24,4 +24,10 @@ public class TestCase {
         String result = converter.convert(2);
         Assert.assertEquals("II", result);
     }
+
+    @Test
+    public void given3getIII() {
+        String result = converter.convert(3);
+        Assert.assertEquals("III", result);
+    }
 }
