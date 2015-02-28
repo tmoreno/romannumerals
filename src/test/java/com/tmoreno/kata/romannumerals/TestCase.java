@@ -168,4 +168,10 @@ public class TestCase {
 		String result = converter.convert(40);
 		Assert.assertEquals("XL", result);
 	}
+
+	@Test
+	public void given41getXLI() {
+		String result = converter.convert(41);
+		Assert.assertEquals("XLI", result);
+	}
 }
