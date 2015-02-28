@@ -78,4 +78,10 @@ public class TestCase {
 		String result = converter.convert(11);
 		Assert.assertEquals("XI", result);
 	}
+
+	@Test
+	public void given12getXII() {
+		String result = converter.convert(12);
+		Assert.assertEquals("XII", result);
+	}
 }
