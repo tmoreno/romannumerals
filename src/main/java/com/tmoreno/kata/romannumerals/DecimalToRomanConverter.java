@@ -6,6 +6,8 @@ public class DecimalToRomanConverter {
 		if (decimal >= 10 && decimal < 40) {
 			return addLetterNTimes("X", decimal / 10)
 					+ convertUnits(decimal % 10);
+		} else if (decimal >= 50) {
+			return "L" + convertUnits(decimal % 10);
 		} else if (decimal >= 40) {
 			return "XL" + convertUnits(decimal % 10);
 		} else {
