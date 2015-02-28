@@ -60,4 +60,10 @@ public class TestCase {
 		String result = converter.convert(8);
 		Assert.assertEquals("VIII", result);
 	}
+
+	@Test
+	public void given9getIX() {
+		String result = converter.convert(9);
+		Assert.assertEquals("IX", result);
+	}
 }
