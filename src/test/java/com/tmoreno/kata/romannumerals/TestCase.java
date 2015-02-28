@@ -42,4 +42,10 @@ public class TestCase {
         String result = converter.convert(5);
         Assert.assertEquals("V", result);
     }
+    
+    @Test
+    public void given6getVI() {
+        String result = converter.convert(6);
+        Assert.assertEquals("VI", result);
+    }
 }
