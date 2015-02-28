@@ -96,4 +96,22 @@ public class TestCase {
 		String result = converter.convert(14);
 		Assert.assertEquals("XIV", result);
 	}
+
+	@Test
+	public void given15getXV() {
+		String result = converter.convert(15);
+		Assert.assertEquals("XV", result);
+	}
+
+	@Test
+	public void given16getXVI() {
+		String result = converter.convert(16);
+		Assert.assertEquals("XVI", result);
+	}
+
+	@Test
+	public void given19getXIX() {
+		String result = converter.convert(19);
+		Assert.assertEquals("XIX", result);
+	}
 }
