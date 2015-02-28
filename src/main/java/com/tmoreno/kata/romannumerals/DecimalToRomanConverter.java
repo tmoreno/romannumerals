@@ -3,16 +3,17 @@ package com.tmoreno.kata.romannumerals;
 public class DecimalToRomanConverter {
 
 	public String convert(int decimal) {
-		if (decimal <= 9) {
-			return convertUnits(decimal % 10);
-		} else if (decimal >= 10 && decimal < 40) {
-			return addLetterNTimes("X", decimal / 10)
-					+ convertUnits(decimal % 10);
+		String result = "";
+
+		if (decimal >= 10 && decimal < 40) {
+			result += addLetterNTimes("X", decimal / 10);
 		} else if (decimal >= 50) {
-			return "L" + convertUnits(decimal % 10);
-		} else {
-			return "XL" + convertUnits(decimal % 10);
+			result = "L";
+		} else if (decimal >= 40) {
+			result = "XL";
 		}
+
+		return result + convertUnits(decimal % 10);
 	}
 
 	private String convertUnits(int number) {
