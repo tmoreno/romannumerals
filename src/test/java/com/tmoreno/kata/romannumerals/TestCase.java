@@ -186,4 +186,10 @@ public class TestCase {
 		String result = converter.convert(49);
 		Assert.assertEquals("XLIX", result);
 	}
+
+	@Test
+	public void given50getL() {
+		String result = converter.convert(50);
+		Assert.assertEquals("L", result);
+	}
 }
