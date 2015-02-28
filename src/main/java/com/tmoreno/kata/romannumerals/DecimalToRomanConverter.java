@@ -9,6 +9,8 @@ public class DecimalToRomanConverter {
 			result += addI(decimal);
 		} else if (decimal == 4) {
 			result += "IV";
+		} else if (decimal == 9) {
+			result += "IX";
 		} else {
 			result += "V" + addI(decimal % 5);
 		}
