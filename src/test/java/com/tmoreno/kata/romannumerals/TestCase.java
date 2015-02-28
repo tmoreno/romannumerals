@@ -192,4 +192,22 @@ public class TestCase {
 		String result = converter.convert(50);
 		Assert.assertEquals("L", result);
 	}
+
+	@Test
+	public void given51getLI() {
+		String result = converter.convert(51);
+		Assert.assertEquals("LI", result);
+	}
+
+	@Test
+	public void given54getLIV() {
+		String result = converter.convert(54);
+		Assert.assertEquals("LIV", result);
+	}
+
+	@Test
+	public void given59getLIX() {
+		String result = converter.convert(59);
+		Assert.assertEquals("LIX", result);
+	}
 }
