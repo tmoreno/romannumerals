@@ -4,7 +4,7 @@ public class DecimalToRomanConverter {
 
 	public String convert(int decimal) {
 		if (decimal >= 10) {
-			return "X" + convertUnits(decimal % 10);
+			return addX(decimal / 10) + convertUnits(decimal % 10);
 		} else {
 			return convertUnits(decimal);
 		}
@@ -31,6 +31,16 @@ public class DecimalToRomanConverter {
 
 		for (int i = 0; i < numbresOfI; i++) {
 			result += "I";
+		}
+
+		return result;
+	}
+
+	private String addX(int numbresOfX) {
+		String result = "";
+
+		for (int i = 0; i < numbresOfX; i++) {
+			result += "X";
 		}
 
 		return result;
