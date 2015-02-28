@@ -3,15 +3,15 @@ package com.tmoreno.kata.romannumerals;
 public class DecimalToRomanConverter {
 
 	public String convert(int decimal) {
-		if (decimal >= 10 && decimal < 40) {
+		if (decimal <= 9) {
+			return convertUnits(decimal);
+		} else if (decimal >= 10 && decimal < 40) {
 			return addLetterNTimes("X", decimal / 10)
 					+ convertUnits(decimal % 10);
 		} else if (decimal >= 50) {
 			return "L" + convertUnits(decimal % 10);
-		} else if (decimal >= 40) {
-			return "XL" + convertUnits(decimal % 10);
 		} else {
-			return convertUnits(decimal);
+			return "XL" + convertUnits(decimal % 10);
 		}
 	}
 
