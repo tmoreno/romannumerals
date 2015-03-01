@@ -194,8 +194,14 @@ public class Numbers10To99 {
 	}
 
 	@Test
-	public void given90getLXC() {
+	public void given90getXC() {
 		String result = converter.convert(90);
 		Assert.assertEquals("XC", result);
+	}
+
+	@Test
+	public void given99getXCIX() {
+		String result = converter.convert(99);
+		Assert.assertEquals("XCIX", result);
 	}
 }
