@@ -3,15 +3,15 @@ package com.tmoreno.kata.romannumerals;
 public class DecimalToRomanConverter {
 
 	public String convert(int decimal) {
-		String result = "";
+		int hundreds = decimal / 100;
+		int tens = (decimal % 100) / 10;
+		int units = (decimal % 100) % 10;
 
-		if (decimal >= 10) {
-			int tens = decimal / 10;
+		String result = convertUnits(hundreds, "C", "D", "M");
+		result += convertUnits(tens, "X", "L", "C");
+		result += convertUnits(units, "I", "V", "X");
 
-			result = convertUnits(tens, "X", "L", "C");
-		}
-
-		return result + convertUnits(decimal % 10, "I", "V", "X");
+		return result;
 	}
 
 	private String convertUnits(int unit, String minLetter,
