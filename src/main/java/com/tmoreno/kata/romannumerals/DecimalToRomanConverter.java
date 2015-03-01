@@ -3,11 +3,13 @@ package com.tmoreno.kata.romannumerals;
 public class DecimalToRomanConverter {
 
 	public String convert(int decimal) {
-		int hundreds = decimal / 100;
-		int tens = (decimal % 100) / 10;
-		int units = (decimal % 100) % 10;
+		int thousands = decimal / 1000;
+		int hundreds = (decimal % 1000) / 100;
+		int tens = ((decimal % 1000) % 100) / 10;
+		int units = ((decimal % 1000) % 100) % 10;
 
-		String result = convertUnits(hundreds, "C", "D", "M");
+		String result = convertUnits(thousands, "M", "", "");
+		result += convertUnits(hundreds, "C", "D", "M");
 		result += convertUnits(tens, "X", "L", "C");
 		result += convertUnits(units, "I", "V", "X");
 
