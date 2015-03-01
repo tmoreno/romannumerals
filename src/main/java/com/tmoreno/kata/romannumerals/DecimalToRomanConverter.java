@@ -2,52 +2,57 @@ package com.tmoreno.kata.romannumerals;
 
 public class DecimalToRomanConverter {
 
-	public String convert(int decimal) {
-		int thousands = decimal / 1000;
-		int hundreds = (decimal % 1000) / 100;
-		int tens = ((decimal % 1000) % 100) / 10;
-		int units = ((decimal % 1000) % 100) % 10;
+    public String convert(int decimal) {
+        if (decimal < 1) {
+            throw new IllegalArgumentException(
+                    "Can not convert numbers less than 1");
+        }
 
-		String result = convertDigit(thousands, "M", "", "");
-		result += convertDigit(hundreds, "C", "D", "M");
-		result += convertDigit(tens, "X", "L", "C");
-		result += convertDigit(units, "I", "V", "X");
+        int thousands = decimal / 1000;
+        int hundreds = (decimal % 1000) / 100;
+        int tens = ((decimal % 1000) % 100) / 10;
+        int units = ((decimal % 1000) % 100) % 10;
 
-		return result;
-	}
+        String result = convertDigit(thousands, "M", "", "");
+        result += convertDigit(hundreds, "C", "D", "M");
+        result += convertDigit(tens, "X", "L", "C");
+        result += convertDigit(units, "I", "V", "X");
 
-	private String convertDigit(int digit, String minLetter,
-			String mediumLetter, String maxLetter) {
-		switch (digit) {
-		case 1:
-		case 2:
-		case 3:
-			return addLetterNTimes(minLetter, digit);
+        return result;
+    }
 
-		case 4:
-			return minLetter + mediumLetter;
+    private String convertDigit(int digit, String minLetter,
+            String mediumLetter, String maxLetter) {
+        switch (digit) {
+        case 1:
+        case 2:
+        case 3:
+            return addLetterNTimes(minLetter, digit);
 
-		case 5:
-		case 6:
-		case 7:
-		case 8:
-			return mediumLetter + addLetterNTimes(minLetter, digit % 5);
+        case 4:
+            return minLetter + mediumLetter;
 
-		case 9:
-			return minLetter + maxLetter;
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+            return mediumLetter + addLetterNTimes(minLetter, digit % 5);
 
-		default:
-			return "";
-		}
-	}
+        case 9:
+            return minLetter + maxLetter;
 
-	private String addLetterNTimes(String letter, int numbresOftimes) {
-		String result = "";
+        default:
+            return "";
+        }
+    }
 
-		for (int i = 0; i < numbresOftimes; i++) {
-			result += letter;
-		}
+    private String addLetterNTimes(String letter, int numbresOftimes) {
+        String result = "";
 
-		return result;
-	}
+        for (int i = 0; i < numbresOftimes; i++) {
+            result += letter;
+        }
+
+        return result;
+    }
 }
