@@ -6,12 +6,14 @@ public class DecimalToRomanConverter {
 		String result = "";
 
 		if (decimal >= 10) {
-			if (decimal >= 10 && decimal < 40) {
-				result = addLetterNTimes("X", decimal / 10);
-			} else if (decimal >= 40 && decimal < 50) {
+			int tens = decimal / 10;
+
+			if (tens >= 1 && tens < 4) {
+				result = addLetterNTimes("X", tens);
+			} else if (tens >= 4 && tens < 5) {
 				result = "XL";
-			} else if (decimal >= 50 && decimal < 90) {
-				result = "L" + addLetterNTimes("X", (decimal / 10) % 5);
+			} else if (tens >= 5 && tens < 9) {
+				result = "L" + addLetterNTimes("X", tens % 5);
 			} else {
 				result = "XC";
 			}
