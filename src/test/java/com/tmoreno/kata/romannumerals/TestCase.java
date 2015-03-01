@@ -246,4 +246,10 @@ public class TestCase {
 		String result = converter.convert(89);
 		Assert.assertEquals("LXXXIX", result);
 	}
+
+	@Test
+	public void given90getLXC() {
+		String result = converter.convert(90);
+		Assert.assertEquals("XC", result);
+	}
 }
