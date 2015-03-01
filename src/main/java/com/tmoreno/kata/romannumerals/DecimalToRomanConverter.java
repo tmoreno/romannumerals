@@ -5,14 +5,16 @@ public class DecimalToRomanConverter {
 	public String convert(int decimal) {
 		String result = "";
 
-		if (decimal >= 10 && decimal < 40) {
-			result += addLetterNTimes("X", decimal / 10);
-		} else if (decimal >= 90) {
-			result = "XC";
-		} else if (decimal >= 50) {
-			result = "L" + addLetterNTimes("X", (decimal / 10) % 5);
-		} else if (decimal >= 40) {
-			result = "XL";
+		if (decimal >= 10) {
+			if (decimal >= 10 && decimal < 40) {
+				result += addLetterNTimes("X", decimal / 10);
+			} else if (decimal >= 40 && decimal < 50) {
+				result = "XL";
+			} else if (decimal >= 50 && decimal < 90) {
+				result = "L" + addLetterNTimes("X", (decimal / 10) % 5);
+			} else {
+				result = "XC";
+			}
 		}
 
 		return result + convertUnits(decimal % 10);
