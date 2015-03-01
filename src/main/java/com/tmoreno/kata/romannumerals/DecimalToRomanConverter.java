@@ -8,14 +8,31 @@ public class DecimalToRomanConverter {
 		if (decimal >= 10) {
 			int tens = decimal / 10;
 
-			if (tens >= 1 && tens < 4) {
+			switch (tens) {
+			case 1:
+			case 2:
+			case 3:
 				result = addLetterNTimes("X", tens);
-			} else if (tens >= 4 && tens < 5) {
+				break;
+
+			case 4:
 				result = "XL";
-			} else if (tens >= 5 && tens < 9) {
+				break;
+
+			case 5:
+			case 6:
+			case 7:
+			case 8:
 				result = "L" + addLetterNTimes("X", tens % 5);
-			} else {
+				break;
+
+			case 9:
 				result = "XC";
+				break;
+
+			default:
+				result = "";
+				break;
 			}
 		}
 
