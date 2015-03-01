@@ -216,4 +216,34 @@ public class TestCase {
 		String result = converter.convert(60);
 		Assert.assertEquals("LX", result);
 	}
+
+	@Test
+	public void given61getLXI() {
+		String result = converter.convert(61);
+		Assert.assertEquals("LXI", result);
+	}
+
+	@Test
+	public void given64getLXIV() {
+		String result = converter.convert(64);
+		Assert.assertEquals("LXIV", result);
+	}
+
+	@Test
+	public void given69getLXIX() {
+		String result = converter.convert(69);
+		Assert.assertEquals("LXIX", result);
+	}
+
+	@Test
+	public void given70getLXX() {
+		String result = converter.convert(70);
+		Assert.assertEquals("LXX", result);
+	}
+
+	@Test
+	public void given89getLXXXIX() {
+		String result = converter.convert(89);
+		Assert.assertEquals("LXXXIX", result);
+	}
 }
