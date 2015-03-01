@@ -8,55 +8,31 @@ public class DecimalToRomanConverter {
 		if (decimal >= 10) {
 			int tens = decimal / 10;
 
-			switch (tens) {
-			case 1:
-			case 2:
-			case 3:
-				result = addLetterNTimes("X", tens);
-				break;
-
-			case 4:
-				result = "XL";
-				break;
-
-			case 5:
-			case 6:
-			case 7:
-			case 8:
-				result = "L" + addLetterNTimes("X", tens % 5);
-				break;
-
-			case 9:
-				result = "XC";
-				break;
-
-			default:
-				result = "";
-				break;
-			}
+			result = convertUnits(tens, "X", "L", "C");
 		}
 
-		return result + convertUnits(decimal % 10);
+		return result + convertUnits(decimal % 10, "I", "V", "X");
 	}
 
-	private String convertUnits(int unit) {
+	private String convertUnits(int unit, String minLetter,
+			String mediumLetter, String maxLetter) {
 		switch (unit) {
 		case 1:
 		case 2:
 		case 3:
-			return addLetterNTimes("I", unit);
+			return addLetterNTimes(minLetter, unit);
 
 		case 4:
-			return "IV";
+			return minLetter + mediumLetter;
 
 		case 5:
 		case 6:
 		case 7:
 		case 8:
-			return "V" + addLetterNTimes("I", unit % 5);
+			return mediumLetter + addLetterNTimes(minLetter, unit % 5);
 
 		case 9:
-			return "IX";
+			return minLetter + maxLetter;
 
 		default:
 			return "";
